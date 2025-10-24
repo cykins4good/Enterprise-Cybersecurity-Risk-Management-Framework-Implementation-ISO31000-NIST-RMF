@@ -1,0 +1,9 @@
+# Ignore temporary files
+*.log
+*.tmp
+*.zip
+*.tar.gz
+__pycache__/
+*.pyc
+output/
+
