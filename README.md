@@ -100,5 +100,14 @@ If you’re interested in **Cybersecurity Risk Management, GRC, or Compliance fr
 
 ---
 
+---
+
+### 👤 Author
+
+**Cypriano Akinwunmi**  
+Cybersecurity GRC - Risk Management & Compliance Professional  
+GitHub: [@cykins4good](https://github.com/cykins4good)  
+LinkedIn: [linkedin.com/in/cypriano-akinwunmi](https://www.linkedin.com/in/cypriano-akinwunmi-33383063/)
+
 *“Cybersecurity risk management is not just a control process—it’s a culture of continuous improvement and informed decision-making.”*  
 — *Cypriano Akinwunmi*  
