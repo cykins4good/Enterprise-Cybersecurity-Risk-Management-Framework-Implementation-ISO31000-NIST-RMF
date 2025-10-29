@@ -37,34 +37,29 @@ Each screenshot below is stored under `screenshots/` and will render directly on
 Each corresponds to the text-based evidence files above and is time-aligned within ±1 minute.
 
 ---
-
-### 🔹 Nmap — Ping Sweep Screenshot (10:27:46 -0400)
-![Nmap Ping Sweep — 10:27:46 -0400](../screenshots/nmap_ping_sweep_20251027_1027.png)
-
 ---
 
-### 🔹 Nmap — Full Service Enumeration Screenshot (10:28:33 -0400)
-![Nmap Full Scan — 10:28:33 -0400](../screenshots/nmap_full_10.10.10.15_20251027_1027.png)
+## 3. Screenshots (Visual Evidence)
 
----
+The following screenshots were captured during the threat and vulnerability identification phase on **October 27, 2025**, confirming tool execution and asset enumeration findings.
 
-### 🔹 Nikto — HTTP Checks Screenshot (10:29:13 -0400)
-![Nikto Scan — 10:29:13 -0400](../screenshots/nikto_10.10.10.15_20251027_1027.png)
+**Nmap — Ping Sweep (2025-10-27 10:27:46 -0400)**
+![Nmap — ping sweep](../../screenshots/nmap_ping_sweep_10.10.10.15_20251027_1027.png)
 
----
+**Nmap — Full Service Enumeration (2025-10-27 10:28:33 -0400)**
+![Nmap — full service enumeration](../../screenshots/nmap_full_10.10.10.15_20251027_1027.png)
 
-### 🔹 Gobuster — Directory Discovery Screenshot (10:30:15 -0400)
-![Gobuster Scan — 10:30:15 -0400](../screenshots/gobuster_10.10.10.15_20251027_1027.png)
+**Nikto — HTTP Checks (2025-10-27 10:29:13 -0400)**
+![Nikto — HTTP checks](../../screenshots/nikto_10.10.10.15_20251027_1027.png)
 
----
+**Gobuster — Directory Discovery (2025-10-27 10:30:15 -0400)**
+![Gobuster — directory discovery](../../screenshots/gobuster_10.10.10.15_20251027_1027.png)
 
-### 🔹 ZAP — Quick Web Scan Screenshot (10:30:40 -0400)
-![ZAP Quick Scan — 10:30:40 -0400](../screenshots/zap_quick_10.10.10.15_20251027_1027.png)
+**ZAP — Quick Scan (2025-10-27 10:30:40 -0400)**
+![ZAP — quick scan](../../screenshots/zap_quick_10.10.10.15_20251027_1027.png)
 
----
-
-### 🔹 Enum4linux — SMB/AD Enumeration Screenshot (10:31:25 -0400)
-![Enum4linux — 10:31:25 -0400](../screenshots/enum4linux_10.10.10.15_20251027_1027.png)
+**enum4linux — AD/SMB Enumeration (2025-10-27 10:31:25 -0400)**
+![enum4linux — AD/SMB enumeration](../../screenshots/enum4linux_10.10.10.15_20251027_1027.png)
 
 ---
 
