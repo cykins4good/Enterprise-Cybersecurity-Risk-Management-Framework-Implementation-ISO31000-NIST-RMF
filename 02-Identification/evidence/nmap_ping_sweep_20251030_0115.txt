@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Thu Oct 30 01:15:57 2025 as: /usr/lib/nmap/nmap --privileged -sn -oN 02-Identification/evidence/nmap_ping_sweep_20251030_0115.txt 10.10.10.0/24
+Nmap scan report for 10.10.10.7
+Host is up.
+# Nmap done at Thu Oct 30 01:16:09 2025 -- 256 IP addresses (1 host up) scanned in 11.45 seconds

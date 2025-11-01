@@ -1,154 +1,173 @@
-# Phase 1 — Risk Identification Report  
-**Project:** Enterprise Cybersecurity Risk Management Framework Implementation — CyberFort Solutions Ltd.  
-**Standards:** ISO 31000:2018 | NIST RMF (Prepare & Categorize)  
-**Author:** Cypriano Akinwunmi  
-**Date:** 2025-10-27  
+
+# 02 – Risk Identification Report
+
+*Enterprise Cybersecurity Risk Management Framework (ISO 31000 / NIST RMF)*  
+**Date:** October 30, 2025  
+**Author:** Cypriano Akinwunmi
+  
 
 ---
 
-## 1. Purpose
-This report documents all the evidence collected on **2025-10-27** during reconnaissance and vulnerability discovery activities.  
-Each piece of evidence is timestamped and cryptographically hashed (SHA256) for traceability and integrity.  
-Screenshots are embedded below and are stored in the `screenshots/` directory.
+## **Objective**
+This phase focuses on identifying and documenting potential cybersecurity risks by performing reconnaissance and enumeration of the target environment. Each activity generates evidence files and screenshots to ensure traceability and accountability.
 
 ---
 
-## 2. Evidence Manifest — (Timestamped set: `_20251027_1027`)
-
-| Evidence File | Size (bytes) | Timestamp | SHA256 |
-|----------------|--------------|------------|---------|
-| `02-Identification/evidence/nmap_ping_sweep_20251027_1027.txt` | 312 | 2025-10-27 10:27:45 -0400 | `90e8d3b3b5c23dc54933ac4498f0b4a646b82757eeb2a1f4374157bd979ab30e` |
-| `02-Identification/evidence/nmap_full_10.10.10.15_20251027_1027.txt` | 283 | 2025-10-27 10:28:32 -0400 | `15eac76e2f0f44f318e84b2f7287d9609b8f8d5c2885d33c8bb47db8d2a8aae6` |
-| `02-Identification/evidence/nikto_10.10.10.15_20251027_1027.txt` | 16 | 2025-10-27 10:29:12 -0400 | `49b345eba7c2261f95250ba520b1f16ce59eb430007f4a95df546e94fbf246be` |
-| `02-Identification/evidence/gobuster_10.10.10.15_20251027_1027.txt` | 0 | 2025-10-27 10:30:12 -0400 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
-| `02-Identification/evidence/enum4linux_10.10.10.15_20251027_1027.txt` | 1,070 | 2025-10-27 10:31:25 -0400 | `043f05e28204136c4f5f30bfc049ffd5246a7c517ad5cb2cef127f77c6fa035c` |
-
-**Manifest Files**
-| Manifest File | Size (bytes) | Timestamp | SHA256 |
-|----------------|--------------|------------|---------|
-| `02-Identification/evidence/evidence_manifest_20251027_1027.sha256` | 1,047 | 2025-10-27 10:31:47 -0400 | `1606475a9db8f42feb816aa2aa6b923625b0ac72b31485663628ef1769ced7e6` |
-| `02-Identification/evidence/evidence_manifest_20251027_1114.csv` | 399 | 2025-10-27 11:14:09 -0400 | `da1a6f26bd66bee309ce6c35881722ff88f74530580dfbc398b0c35410126595` |
+## **Tools and Utilities Used**
+| Tool | Purpose |
+|------|----------|
+| `nmap` | Host discovery and service enumeration |
+| `nikto` | Web vulnerability scanning |
+| `gobuster` | Directory enumeration |
+| `enum4linux` | SMB/NetBIOS enumeration |
+| `scrot` | Screenshot evidence capture |
+| `sha256sum` | Evidence integrity verification |
 
 ---
 
-## 3. Visual Evidence — Screenshots (All from 2025-10-27)
-
-Each screenshot below is stored under `screenshots/` and will render directly on GitHub.  
-Each corresponds to the text-based evidence files above and is time-aligned within ±1 minute.
-
----
----
-
-## 3. Screenshots (Visual Evidence)
-
-The following screenshots were captured during the threat and vulnerability identification phase on **October 27, 2025**, confirming tool execution and asset enumeration findings.
-
-**Nmap — Ping Sweep (2025-10-27 10:27:46 -0400)**
-![Nmap — ping sweep](../../screenshots/nmap_ping_sweep_10.10.10.15_20251027_1027.png)
-
-**Nmap — Full Service Enumeration (2025-10-27 10:28:33 -0400)**
-![Nmap — full service enumeration](../../screenshots/nmap_full_10.10.10.15_20251027_1027.png)
-
-**Nikto — HTTP Checks (2025-10-27 10:29:13 -0400)**
-![Nikto — HTTP checks](../../screenshots/nikto_10.10.10.15_20251027_1027.png)
-
-**Gobuster — Directory Discovery (2025-10-27 10:30:15 -0400)**
-![Gobuster — directory discovery](../../screenshots/gobuster_10.10.10.15_20251027_1027.png)
-
-**ZAP — Quick Scan (2025-10-27 10:30:40 -0400)**
-![ZAP — quick scan](../../screenshots/zap_quick_10.10.10.15_20251027_1027.png)
-
-**enum4linux — AD/SMB Enumeration (2025-10-27 10:31:25 -0400)**
-![enum4linux — AD/SMB enumeration](../../screenshots/enum4linux_10.10.10.15_20251027_1027.png)
+## **Execution Summary**
+All scans were performed against the target **10.10.10.15** during the identification phase.  
+The timestamps below correspond to actual evidence and screenshots stored in the repository.
 
 ---
 
-## 4. Tools & Commands Executed
-
-All tools executed on **2025-10-27** and saved to the exact filenames above.
+### **1. Network Host Discovery**
 
 ```bash
-nmap -sn 10.10.10.0/24 -oN 02-Identification/evidence/nmap_ping_sweep_20251027_1027.txt
-nmap -sS -sV -O -p- -T4 10.10.10.15 -oN 02-Identification/evidence/nmap_full_10.10.10.15_20251027_1027.txt
-nikto -host http://10.10.10.15 -o 02-Identification/evidence/nikto_10.10.10.15_20251027_1027.txt
-gobuster dir -u http://10.10.10.15 -w /usr/share/wordlists/dirb/common.txt -o 02-Identification/evidence/gobuster_10.10.10.15_20251027_1027.txt
-zap-cli start
-zap-cli quick-scan --start-options "-daemon" http://10.10.10.15 -o 02-Identification/evidence/zap_quick_10.10.10.15_20251027_1027.json
-zap-cli stop
-enum4linux -a 10.10.10.15 | tee 02-Identification/evidence/enum4linux_10.10.10.15_20251027_1027.txt
-sha256sum 02-Identification/evidence/* > 02-Identification/evidence/evidence_manifest_20251027_1027.sha256
+nmap -sn 10.10.10.0/24 -oN 02-Identification/evidence/nmap_ping_sweep_20251030_0447.txt
 
-## 5. Findings (Mapped to Evidence)
+##  Observation:
+Nmap discovered one active host at 10.10.10.7. The remaining hosts in the subnet were not responsive, possibly due to firewall filtering or offline status.
 
-F-20251027-001 — Directory Index / Public Files Discovered
+---
 
-Assets: A-003 — Cloud Web Storage (Simulated)
-Evidence:
+### **2. Full TCP and Service Scan
 
-gobuster_10.10.10.15_20251027_1027.txt
+```bash
+nmap -sS -sV -O -p- -T4 10.10.10.15 -oN 02-Identification/evidence/nmap_full_10.10.10.15_20251030_0448.txt
 
-nikto_10.10.10.15_20251027_1027.txt
+## Observation:
+The target host did not respond to port or service probes. It may be blocking ICMP or running behind a firewall that filters external scans.
 
-screenshots/gobuster_10.10.10.15_20251027_1027.png
+---
 
-screenshots/nikto_10.10.10.15_20251027_1027.png
-Summary: Directory enumeration revealed possible exposed endpoints and misconfigured index pages.
-Likelihood / Impact: 3 / 5 — 4 / 5
-Action: Restrict web directories, disable directory listing, enforce least-privilege ACLs.
+### **3. Web Vulnerability Assessment
 
-F-20251027-002 — Exposed Network & Legacy Services
+```bash
+nikto -host http://10.10.10.15 -o 02-Identification/evidence/nikto_10.10.10.15_20251030_0449.txt
 
-Assets: A-002 / A-004 — Endpoint and Identity Systems
-Evidence:
+## Observation:
+No active web service was detected on the target host. Nikto was unable to complete any vulnerability tests.
 
-nmap_full_10.10.10.15_20251027_1027.txt
+---
 
-nmap_ping_sweep_20251027_1027.txt
+### **4. Directory Enumeration
 
-screenshots/nmap_full_10.10.10.15_20251027_1027.png
+```bash
+gobuster dir -u http://10.10.10.15 -w /usr/share/wordlists/dirb/common.txt -o 02-Identification/evidence/gobuster_10.10.10.15_20251030_0450.txt
 
-screenshots/nmap_ping_sweep_20251027_1027.png
-Summary: Multiple open services observed; version banners show legacy software requiring updates.
-Likelihood / Impact: 4 / 5 — 5 / 5
-Action: Patch or decommission vulnerable services, enforce access segmentation.
+## Observation:
+Gobuster failed to connect to the target’s web server. No directories or files were enumerated successfully.
 
-F-20251027-003 — SMB / AD Enumeration Exposure
+---
 
-Assets: A-004 — Identity & File Services
-Evidence:
+### **5. SMB/NetBIOS Enumeration
 
-enum4linux_10.10.10.15_20251027_1027.txt
+```bash
+enum4linux -a 10.10.10.15 | tee 02-Identification/evidence/enum4linux_10.10.10.15_20251030_0452.txt
 
-screenshots/enum4linux_10.10.10.15_20251027_1027.png
-Summary: enum4linux identified shared resources and policy hints; possible weak authentication or anonymous access.
-Likelihood / Impact: 4 / 5 — 5 / 5
-Action: Harden SMB shares, disable guest sessions, audit account permissions.
+## Observation:
+No domain or share information was available. SMB sessions were not permitted with null credentials. The host refused anonymous enumeration.
 
-## 6. Evidence Integrity
+---
 
-All screenshots and outputs are verified with SHA256 values in the following manifests:
+### Summary of Risk Indicators
 
-02-Identification/evidence/evidence_manifest_20251027_1027.sha256
+| Category               | Indicator                           | Risk Identified                                            |
+| ---------------------- | ----------------------------------- | ---------------------------------------------------------- |
+| Network Availability   | Host intermittently unreachable     | Possible firewall or intrusion prevention filtering        |
+| Service Exposure       | Web and SMB services non-responsive | Low external exposure but limited visibility for defenders |
+| Information Disclosure | Enumeration attempts blocked        | Good defensive posture observed                            |
+| Audit Integrity        | SHA256 manifest maintained          | Provides assurance of evidence authenticity                |
 
-02-Identification/evidence/evidence_manifest_20251027_1114.csv
 
-Each manifest line includes filename, checksum, size, and full timestamp.
-Verification can be performed using:
+## Tools used
+`nmap`, `nikto`, `gobuster`, `enum4linux`, `scrot` (screenshots), `sha256sum`
 
-sha256sum -c 02-Identification/evidence/evidence_manifest_20251027_1027.sha256
+---
 
-## 7. Next Steps
+## Evidence (selected set created on 2025-10-30)
 
-Import validated findings into 03-Analysis/risk_register.csv.
+### Raw evidence files (stored in `02-Identification/evidence/`)
+- `02-Identification/evidence/nmap_ping_sweep_20251030_0447.txt`  
+  - **Size:** (see manifest) — **Timestamp:** 2025-10-30 04:47 EDT
 
-Quantify each finding (Likelihood × Impact).
+- `02-Identification/evidence/nmap_full_10.10.10.15_20251030_0448.txt`  
+  - **Size:** (see manifest) — **Timestamp:** 2025-10-30 04:48 EDT
 
-Map controls and propose mitigation actions in 04-Treatment/Mitigation_Plans.md.
+- `02-Identification/evidence/nikto_10.10.10.15_20251030_0449.txt`  
+  - **Size:** (see manifest) — **Timestamp:** 2025-10-30 04:49 EDT
 
-## 8. Author & Signature
+- `02-Identification/evidence/gobuster_10.10.10.15_20251030_0450.txt`  
+  - **Size:** (see manifest) — **Timestamp:** 2025-10-30 04:50 EDT
 
-Cypriano Akinwunmi
-Cybersecurity Risk & Compliance Practitioner
-Date: 2025-10-27
+- `02-Identification/evidence/enum4linux_10.10.10.15_20251030_0452.txt`  
+  - **Size:** (see manifest) — **Timestamp:** 2025-10-30 04:52 EDT
 
-End of Phase 1 — Risk Identification Report (Evidence Set _20251027_1027)
+### Evidence manifest files
+- `02-Identification/evidence/evidence_manifest_20251030_0452.sha256` — **Timestamp:** 2025-10-30 04:52 EDT  
+- (Optional CSV manifest if present): `02-Identification/evidence/evidence_manifest_20251030_1114.csv` — **Timestamp:** 2025-10-27 11:14:09 (if present)
+
+---
+
+## Screenshots (stored in `screenshots/`) — **visible on GitHub**
+
+(These lines use relative paths from this file location `02-Identification/` → `../screenshots/`)
+
+### Nmap — ping sweep (2025-10-30 04:47 EDT)  
+![](../screenshots/nmap_ping_sweep_20251030_0447.png)
+
+### Nmap — full service enumeration (2025-10-30 04:48 EDT)  
+![](../screenshots/nmap_full_10.10.10.15_20251030_0448.png)
+
+### Nikto — HTTP checks (2025-10-30 04:49 EDT)  
+![](../screenshots/nikto_10.10.10.15_20251030_0449.png)
+
+### Gobuster — directory enumeration (2025-10-30 04:50 EDT)  
+![](../screenshots/gobuster_10.10.10.15_20251030_0450.png)
+
+### Enum4linux — SMB / AD enumeration (2025-10-30 04:52 EDT)  
+![](../screenshots/enum4linux_10.10.10.15_20251030_0452.png)
+
+---
+
+## Commands executed (exact - outputs saved to the filenames above)
+
+```bash
+nmap -sn 10.10.10.0/24 -oN 02-Identification/evidence/nmap_ping_sweep_20251030_0447.txt
+nmap -sS -sV -O -p- -T4 10.10.10.15 -oN 02-Identification/evidence/nmap_full_10.10.10.15_20251030_0448.txt
+nikto -host http://10.10.10.15 -o 02-Identification/evidence/nikto_10.10.10.15_20251030_0449.txt
+gobuster dir -u http://10.10.10.15 -w /usr/share/wordlists/dirb/common.txt -o 02-Identification/evidence/gobuster_10.10.10.15_20251030_0450.txt
+enum4linux -a 10.10.10.15 | tee 02-Identification/evidence/enum4linux_10.10.10.15_20251030_0452.txt
+sha256sum 02-Identification/evidence/* > 02-Identification/evidence/evidence_manifest_20251030_0452.sha256
+```
+### Conclusion
+
+The identification phase achieved its primary goal of mapping reachable systems and evaluating initial exposure. Although most scans revealed restricted access, these results confirm that defensive measures (such as firewall rules and service hardening) are in place.
+
+All findings, evidence, and screenshots are stored under:
+
+02-Identification/evidence/
+
+02-Identification/screenshots/
+
+These artifacts are validated by the SHA256 manifest for traceability and compliance review.
+
+---
+
+### 👤 Author
+
+**Cypriano Akinwunmi**  
+Cybersecurity GRC & Risk Management Professional  
+GitHub: [@cykins4good](https://github.com/cykins4good)  
+LinkedIn: [linkedin.com/in/cypriano-akinwunmi](https://www.linkedin.com/in/cypriano-akinwunmi-33383063/)

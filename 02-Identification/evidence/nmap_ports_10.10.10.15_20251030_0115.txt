@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Thu Oct 30 01:16:12 2025 as: /usr/lib/nmap/nmap --privileged -sS -sV -p 1-65535 -oN 02-Identification/evidence/nmap_ports_10.10.10.15_20251030_0115.txt 10.10.10.15
+# Nmap done at Thu Oct 30 01:16:14 2025 -- 1 IP address (0 hosts up) scanned in 1.81 seconds

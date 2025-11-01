@@ -1,2 +1,0 @@
-# Nmap 7.95 scan initiated Mon Oct 27 10:28:30 2025 as: /usr/lib/nmap/nmap --privileged -sS -sV -O -p- -T4 -oN 02-Identification/evidence/nmap_full_10.10.10.15_20251027_1027.txt 10.10.10.15
-# Nmap done at Mon Oct 27 10:28:32 2025 -- 1 IP address (0 hosts up) scanned in 2.92 seconds
